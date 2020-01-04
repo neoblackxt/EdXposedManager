@@ -1,33 +1,33 @@
 apply plugin: 'com.android.application'
-apply plugin: 'stringfog'
-apply plugin: 'AndResGuard'
+//apply plugin: 'stringfog'
+//apply plugin: 'AndResGuard'
 
-stringfog {
-    key '0xOo0oOQDsSxXx0'
-    enable true
-    implementation 'com.github.megatronking.stringfog.xor.StringFogImpl'
-}
+//stringfog {
+//    key '0xOo0oOQDsSxXx0'
+//    enable true
+//    implementation 'com.github.megatronking.stringfog.xor.StringFogImpl'
+//}
 
-andResGuard {
-//    mappingFile = file("./resource_mapping.txt")
-    mappingFile = null
-    use7zip = true
-    useSign = true
-    // 打开这个开关，会keep住所有资源的原始路径，只混淆资源的名字
-    keepRoot = false
-    whiteList = [
-            "R.mipmap.ic_launcher"
-    ]
-    compressFilePattern = [
-            "*.png",
-            "*.jpg",
-            "*.jpeg",
-            "resources.arsc"
-    ]
-    sevenzip {
-        artifact = 'com.tencent.mm:SevenZip:1.1.14'
-    }
-}
+//andResGuard {
+////    mappingFile = file("./resource_mapping.txt")
+//    mappingFile = null
+//    use7zip = true
+//    useSign = true
+//    // 打开这个开关，会keep住所有资源的原始路径，只混淆资源的名字
+//    keepRoot = false
+//    whiteList = [
+//            "R.mipmap.ic_launcher"
+//    ]
+//    compressFilePattern = [
+//            "*.png",
+//            "*.jpg",
+//            "*.jpeg",
+//            "resources.arsc"
+//    ]
+//    sevenzip {
+//        artifact = 'com.tencent.mm:SevenZip:1.1.14'
+//    }
+//}
 
 ext {
     VERSION_DATE = '19/10/18'
@@ -53,27 +53,17 @@ android {
         buildConfigField "String", "APP_VERSION", APP_VERSION
     }
 
-    signingConfigs {
-        myConfig {
-            storeFile file('C:/Users/walke/AndroidStudioProjects/krins.jks')
-            storePassword "krins0381."
-            keyAlias "key0"
-            keyPassword "krins0381."
-        }
-    }
 
     buildTypes {
         debug {
-            minifyEnabled true
-            shrinkResources true
-            signingConfig signingConfigs.myConfig
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            minifyEnabled true
+//            shrinkResources true
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
-            minifyEnabled true
-            shrinkResources true
-            signingConfig signingConfigs.myConfig
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            minifyEnabled true
+//            shrinkResources true
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 
@@ -112,7 +102,7 @@ dependencies {
 
     implementation "com.sergivonavi:materialbanner:1.2.0" // Banner
     implementation 'com.github.lihangleo2:ShadowLayout:2.1.4' // Shadow Layout
-    implementation 'com.shuhart.stepview:stepview:1.5.0' // StepView
+//    implementation 'com.shuhart.stepview:stepview:1.5.0' // StepView
     implementation 'com.getkeepsafe.taptargetview:taptargetview:1.13.0' // TapTargetView
     implementation 'com.scottyab:secure-preferences-lib:0.1.7' // Secure Preference
     implementation 'com.github.coxylicacid:takagi:1.0.1-alpha02' // Takagi Step Guide
